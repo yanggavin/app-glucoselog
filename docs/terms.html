@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Family Glucose Log | Terms of Use</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; margin: 0; background: #f4f7fa; color: #0f172a; }
+    .container { max-width: 920px; margin: 0 auto; padding: 24px 16px 56px; }
+    .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 20px; }
+    .lang-switch { display: flex; gap: 8px; margin: 0 0 16px; flex-wrap: wrap; }
+    .lang-switch button { border: 1px solid #cbd5e1; background: #fff; border-radius: 999px; padding: 8px 14px; font-weight: 600; cursor: pointer; }
+    .lang-switch button.active { background: #1975d2; border-color: #1975d2; color: #fff; }
+    .lang-block { display: none; }
+    .lang-block.active { display: block; }
+    h1, h2 { margin: 0 0 12px; }
+    p, li { line-height: 1.6; }
+    a { color: #1975d2; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="lang-switch">
+      <button type="button" data-lang="en" class="active">English</button>
+      <button type="button" data-lang="zh">简体中文</button>
+      <button type="button" data-lang="es">Español</button>
+    </div>
+
+    <section class="card lang-block active" data-lang="en">
+      <h1>Terms of Use</h1>
+      <p><strong>App:</strong> Family Glucose Log</p>
+      <p><strong>Effective date:</strong> February 23, 2026</p>
+      <h2>1. Purpose</h2>
+      <p>This app is designed for personal blood glucose record keeping and visualization.</p>
+      <h2>2. No Medical Advice</h2>
+      <p>The app does not provide diagnosis, treatment, emergency alerts, or medical recommendations.</p>
+      <h2>3. User Responsibility</h2>
+      <ul>
+        <li>You are responsible for the accuracy of entered data.</li>
+        <li>You should consult licensed professionals for medical decisions.</li>
+      </ul>
+      <h2>4. Data & Availability</h2>
+      <p>Service features may evolve over time. Local storage and iCloud sync availability depends on device/account status.</p>
+      <h2>5. Contact</h2>
+      <p>For support: <a href="mailto:support@familyglucolog.app">support@familyglucolog.app</a></p>
+      <p><a href="index.html">Back to Home</a></p>
+    </section>
+
+    <section class="card lang-block" data-lang="zh">
+      <h1>使用条款</h1>
+      <p><strong>应用：</strong>家庭血糖记录</p>
+      <p><strong>生效日期：</strong>2026年2月23日</p>
+      <h2>1. 用途说明</h2>
+      <p>本应用用于个人血糖记录与数据可视化展示。</p>
+      <h2>2. 非医疗建议</h2>
+      <p>本应用不提供诊断、治疗、紧急预警或医疗建议。</p>
+      <h2>3. 用户责任</h2>
+      <ul>
+        <li>用户需自行确保录入数据准确。</li>
+        <li>涉及医疗决策时，请咨询专业医生。</li>
+      </ul>
+      <h2>4. 数据与可用性</h2>
+      <p>功能可能随版本迭代更新。本地存储与 iCloud 同步能力受设备与账号状态影响。</p>
+      <h2>5. 联系方式</h2>
+      <p>支持邮箱：<a href="mailto:support@familyglucolog.app">support@familyglucolog.app</a></p>
+      <p><a href="index.html">返回首页</a></p>
+    </section>
+
+    <section class="card lang-block" data-lang="es">
+      <h1>Términos de uso</h1>
+      <p><strong>App:</strong> Registro Familiar de Glucosa</p>
+      <p><strong>Fecha de vigencia:</strong> 23 de febrero de 2026</p>
+      <h2>1. Finalidad</h2>
+      <p>Esta app está diseñada para registrar y visualizar datos personales de glucosa.</p>
+      <h2>2. Sin consejo médico</h2>
+      <p>La app no ofrece diagnóstico, tratamiento, alertas de emergencia ni recomendaciones médicas.</p>
+      <h2>3. Responsabilidad del usuario</h2>
+      <ul>
+        <li>El usuario es responsable de la precisión de los datos introducidos.</li>
+        <li>Para decisiones médicas, consulta a profesionales autorizados.</li>
+      </ul>
+      <h2>4. Datos y disponibilidad</h2>
+      <p>Las funciones pueden cambiar con el tiempo. La disponibilidad de almacenamiento local y sincronización iCloud depende del estado del dispositivo/cuenta.</p>
+      <h2>5. Contacto</h2>
+      <p>Soporte: <a href="mailto:support@familyglucolog.app">support@familyglucolog.app</a></p>
+      <p><a href="index.html">Volver al inicio</a></p>
+    </section>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.lang-switch button[data-lang]');
+    const blocks = document.querySelectorAll('.lang-block');
+    function switchLang(lang) {
+      buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+      blocks.forEach(block => block.classList.toggle('active', block.dataset.lang === lang));
+      document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+      localStorage.setItem('fgl_lang', lang);
+    }
+    const preferred = localStorage.getItem('fgl_lang') || 'en';
+    switchLang(preferred);
+    buttons.forEach(btn => btn.addEventListener('click', () => switchLang(btn.dataset.lang)));
+  </script>
+</body>
+</html>

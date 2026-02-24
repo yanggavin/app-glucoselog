@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Family Glucose Log | Privacy Policy</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; margin: 0; background: #f4f7fa; color: #0f172a; }
+    .container { max-width: 920px; margin: 0 auto; padding: 24px 16px 56px; }
+    .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 20px; }
+    .lang-switch { display: flex; gap: 8px; margin: 0 0 16px; flex-wrap: wrap; }
+    .lang-switch button { border: 1px solid #cbd5e1; background: #fff; border-radius: 999px; padding: 8px 14px; font-weight: 600; cursor: pointer; }
+    .lang-switch button.active { background: #1975d2; border-color: #1975d2; color: #fff; }
+    .lang-block { display: none; }
+    .lang-block.active { display: block; }
+    h1, h2 { margin: 0 0 12px; }
+    p, li { line-height: 1.6; }
+    a { color: #1975d2; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="lang-switch">
+      <button type="button" data-lang="en" class="active">English</button>
+      <button type="button" data-lang="zh">简体中文</button>
+      <button type="button" data-lang="es">Español</button>
+    </div>
+
+    <section class="card lang-block active" data-lang="en">
+      <h1>Privacy Policy</h1>
+      <p><strong>App:</strong> Family Glucose Log</p>
+      <p><strong>Effective date:</strong> February 23, 2026</p>
+      <h2>1. Data We Process</h2>
+      <p>The app stores blood glucose records, member names, notes, and selected preferences you enter.</p>
+      <h2>2. Data Storage</h2>
+      <ul>
+        <li>By default, data is stored locally on your device via SwiftData.</li>
+        <li>If iCloud is enabled on your device, data can be synced using your iCloud private database.</li>
+      </ul>
+      <h2>3. Data Sharing</h2>
+      <p>We do not sell your data and we do not use third-party analytics or advertising SDKs.</p>
+      <h2>4. Medical Disclaimer</h2>
+      <p>This app does not provide diagnosis, treatment, emergency alerts, or medical recommendations.</p>
+      <h2>5. Contact</h2>
+      <p>For privacy requests or support: <a href="mailto:support@familyglucolog.app">support@familyglucolog.app</a></p>
+      <p><a href="index.html">Back to Home</a></p>
+    </section>
+
+    <section class="card lang-block" data-lang="zh">
+      <h1>隐私政策</h1>
+      <p><strong>应用：</strong>家庭血糖记录</p>
+      <p><strong>生效日期：</strong>2026年2月23日</p>
+      <h2>1. 我们处理的数据</h2>
+      <p>本应用会处理你主动录入的数据，包括血糖记录、成员名称、备注和偏好设置。</p>
+      <h2>2. 数据存储方式</h2>
+      <ul>
+        <li>默认情况下，数据通过 SwiftData 存储在设备本地。</li>
+        <li>若设备启用了 iCloud，可通过 iCloud 私有数据库进行同步。</li>
+      </ul>
+      <h2>3. 数据共享</h2>
+      <p>我们不会出售你的数据，也不集成第三方广告或分析 SDK。</p>
+      <h2>4. 医疗免责声明</h2>
+      <p>本应用不提供诊断、治疗、紧急预警或医疗建议。</p>
+      <h2>5. 联系方式</h2>
+      <p>隐私与支持邮箱：<a href="mailto:support@familyglucolog.app">support@familyglucolog.app</a></p>
+      <p><a href="index.html">返回首页</a></p>
+    </section>
+
+    <section class="card lang-block" data-lang="es">
+      <h1>Política de privacidad</h1>
+      <p><strong>App:</strong> Registro Familiar de Glucosa</p>
+      <p><strong>Fecha de vigencia:</strong> 23 de febrero de 2026</p>
+      <h2>1. Datos que procesamos</h2>
+      <p>La app procesa los datos que introduces: registros de glucosa, nombres de miembros, notas y preferencias.</p>
+      <h2>2. Almacenamiento de datos</h2>
+      <ul>
+        <li>Por defecto, los datos se guardan localmente en el dispositivo mediante SwiftData.</li>
+        <li>Si iCloud está habilitado, los datos pueden sincronizarse con tu base de datos privada de iCloud.</li>
+      </ul>
+      <h2>3. Compartición de datos</h2>
+      <p>No vendemos tus datos y no utilizamos SDKs de publicidad ni analítica de terceros.</p>
+      <h2>4. Descargo médico</h2>
+      <p>La app no ofrece diagnóstico, tratamiento, alertas de emergencia ni recomendaciones médicas.</p>
+      <h2>5. Contacto</h2>
+      <p>Privacidad y soporte: <a href="mailto:support@familyglucolog.app">support@familyglucolog.app</a></p>
+      <p><a href="index.html">Volver al inicio</a></p>
+    </section>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.lang-switch button[data-lang]');
+    const blocks = document.querySelectorAll('.lang-block');
+    function switchLang(lang) {
+      buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+      blocks.forEach(block => block.classList.toggle('active', block.dataset.lang === lang));
+      document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+      localStorage.setItem('fgl_lang', lang);
+    }
+    const preferred = localStorage.getItem('fgl_lang') || 'en';
+    switchLang(preferred);
+    buttons.forEach(btn => btn.addEventListener('click', () => switchLang(btn.dataset.lang)));
+  </script>
+</body>
+</html>
